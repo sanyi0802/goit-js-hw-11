@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        .search-form {
+            background-color: #4056b4;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .search-form input {
+            padding: 10px 10px 10px 10px;
+            font-size: 16px;
+            border: 2px solid white;
+            border-radius: 5px;
+            background-color: transparent;
+            color: white;
+            width: calc(40% - 42px);
+            /* Adjust width to make space for the button */
+            margin-right: -2px;
+            /* Ensures the input and button are connected */
+        }
+        
+        .search-form input::placeholder {
+            color: white;
+        }
+        
+        .search-form button {
+            padding: 10px;
+            font-size: -40px;
+            background-color: transparent;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            position: absolute;
+            right: calc(30% + 1px);
+            height: 40px;
+        }
+        
+        .search-form button::after {
+            content: '\1F50E';
+            font-size: 20px;
+            color: white;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .photo-card {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .photo-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .info {
+            padding: 15px;
+        }
+        
+        .info-item {
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .load-more {
+            display: block;
+            width: 100%;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .load-more:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="search-form" id="search-form">
+        <input type="text" name="searchQuery" autocomplete="off" placeholder="Search images..." />
+        <button type="submit"></button>
+    </form>
+
+    <div class="gallery"></div>
+
+    <button type="button" class="load-more" style="display: none;">
+        Load more
+    </button>
+
+    <script src="index.js" type="module"></script>
+</body>
+
+</html>
